@@ -3,25 +3,68 @@ class Timer {
     this.timerInput = timerInput;
 
     this.timerInput.addEventListener("keydown", this.handleKeydown);
+    document.body.addEventListener("keydown", this.handlePause);
   }
 
+  intervalID;
+
+  startTimer = () => {
+    document.querySelector(".container").focus();
+
+    const intervalID = setInterval(() => {
+      this.timerInput.value -= 1;
+
+      if (this.timerInput.value <= 0) {
+        clearInterval(intervalID);
+        this.timerInput.value = 0;
+      }
+    }, 1000);
+
+    this.intervalID = intervalID;
+  };
+
+  pauseTimer = () => {
+    this.timerInput.focus();
+    clearInterval(this.intervalID);
+  };
+
+  clearTimer = () => {
+    this.timerInput.focus();
+    clearInterval(this.intervalID);
+    this.timerInput.value = 0;
+  };
+
+  editTimer = () => {
+    this.timerInput.focus();
+    clearInterval(this.intervalID);
+  };
+
   handleKeydown = (e) => {
-    if (e.keyCode === 13 && e.target.value) {
-      // remove event listener for enter
-      this.timerInput.removeEventListener("keydown", this.handleKeydown);
+    const keyCode = e.keyCode;
 
-      const value = parseFloat(e.target.value);
+    switch (keyCode) {
+      case 13: // enter
+        this.startTimer();
+        break;
+      default:
+        break;
+    }
+  };
 
-      const intervalID = setInterval(() => {
-        this.timerInput.value -= 1;
-        if (this.timerInput.value <= 0) {
-          clearInterval(intervalID);
-          this.timerInput.value = 0;
+  handlePause = (e) => {
+    const keyCode = e.keyCode;
 
-          // add event listener for enter
-          this.timerInput.addEventListener("keydown", this.handleKeydown);
+    switch (keyCode) {
+      case 32: // space
+        this.pauseTimer();
+        break;
+      case 8: // delete
+        if (e.ctrlKey) {
+          this.clearTimer();
+        } else {
+          this.editTimer();
         }
-      }, 1000);
+        break;
     }
   };
 }
