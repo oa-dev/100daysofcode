@@ -9,7 +9,34 @@
   <body>
     <!-- tabindex allows the use of focus() on a non standard element, i.e div -->
     <div tabindex="0" class="container">
-      <input class="timer" type="number" name="time" autofocus />
+      <div class="instructions">
+        <h3>Instructions</h3>
+        <table class="dropdown-content">
+          <tr>
+            <th>Action</th>
+            <th>Key</th>
+          </tr>
+          <tr>
+            <td>Start</td>
+            <td>Enter</td>
+          </tr>
+          <tr>
+            <td>Pause</td>
+            <td>Space</td>
+          </tr>
+          <tr>
+            <td>Edit</td>
+            <td>Delete</td>
+          </tr>
+          <tr>
+            <td>Clear</td>
+            <td>Ctrl + Delete</td>
+          </tr>
+        </table>
+      </div>
+      <div class="timer-container">
+        <input class="timer" type="number" name="time" autofocus />
+      </div>
     </div>
     <script type="text/javascript" src="bundle.js"></script>
   </body>
