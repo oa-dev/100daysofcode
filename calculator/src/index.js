@@ -3,18 +3,32 @@ class Calculator {
     this.display = display;
     this.buttons = buttons;
 
-    this.display.addEventListener("input", this.handleDisplay);
     this.buttons.addEventListener("click", this.handleButtonClick);
     this.sum = "";
+    this.operator = "";
+    this.currentNumber = "";
+    this.previousNumber = "";
   }
 
-  handleDisplay = (e) => {
-    const value = e.target.value;
+  calculate = () => {
+    this.sum = this.previousNumber
+      .concat(this.operator)
+      .concat(this.currentNumber);
+    console.log(this.sum);
+    return new Function(`return ${this.sum};`)();
   };
 
-  setDisplay = (textContent) => {
-    this.display.textContent += textContent;
-    this.sum += textContent;
+  handleNumber = (value) => {
+    if (this.previousNumber) {
+      this.display.textContent = "".concat(this.currentNumber);
+    }
+    this.display.textContent += value;
+    this.currentNumber += value;
+  };
+
+  displayCalculation = () => {
+    this.currentNumber = this.calculate().toString();
+    this.display.textContent = this.currentNumber;
   };
 
   handleOperator = (operator) => {
@@ -24,21 +38,27 @@ class Calculator {
       ["÷"]: "/",
       ["×"]: "*",
     };
-    this.sum += operators[operator];
-  };
 
-  calculate = (value) => {
-    return Function(`"use strict";return ${value}`)();
+    if (this.previousNumber) {
+      this.displayCalculation();
+    }
+
+    this.operator = operators[operator];
+    this.previousNumber = this.currentNumber;
+    this.currentNumber = "";
+    if (this.previousNumber) {
+      this.display.textContent = this.previousNumber;
+    }
   };
 
   handleButtonClick = (e) => {
     for (let item of e.target.classList) {
       if (item === "number") {
-        this.setDisplay(e.target.textContent);
+        this.handleNumber(e.target.textContent);
       } else if (item === "operator") {
         this.handleOperator(e.target.textContent);
       } else if (item === "equals") {
-        console.log(this.calculate(this.sum));
+        this.display.textContent = this.calculate();
       }
     }
   };
