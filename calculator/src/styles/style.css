@@ -7,7 +7,6 @@
 }
 
 body {
-  /* background-color: rgb(233, 233, 233); */
   display: flex;
   min-height: 100vh;
   justify-content: center;
@@ -32,7 +31,6 @@ body {
 .display {
   justify-content: flex-end;
   align-items: center;
-  margin-bottom: 5px;
   height: 60px;
   font-size: 2em;
   background-color: rgb(212, 212, 212);
@@ -57,4 +55,18 @@ span {
 
 span:hover {
   background-color: rgb(212, 212, 212);
+}
+
+.plus,
+.minus,
+.divide,
+.times {
+  background-color: rgb(252, 62, 29);
+}
+
+.plus:hover,
+.minus:hover,
+.divide:hover,
+.times:hover {
+  background-color: rgb(255, 100, 73);
 }
