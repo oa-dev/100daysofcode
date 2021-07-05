@@ -19,7 +19,9 @@ const load = () => {
 
 const progress = () => {
   percent < 100
-    ? (progress_div.textContent = `${Math.floor(percent)}%`)
+    ? (progress_div.textContent = `${Math.floor(
+        percent
+      )}% of nothing is loading!`)
     : (progress_div.textContent = `Loaded`);
 };
 

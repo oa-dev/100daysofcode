@@ -18,6 +18,7 @@ body {
   width: 90vw;
   border: 1px solid rgb(2, 0, 36, 1);
   padding: 2px;
+  border-radius: 45px;
 }
 
 .loading-bar {
@@ -30,11 +31,12 @@ body {
     rgba(30, 9, 121, 0.6852941005503764) 35%,
     rgba(0, 212, 255, 1) 100%
   );
+  border-radius: 45px;
 }
 
 .progress {
   height: 5vh;
   width: 90vw;
-  color: red;
+  color: rgb(0, 212, 255);
   margin-top: 5px;
 }
