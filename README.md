@@ -4,7 +4,7 @@ As of 1 July 2021, I'll be committed to the [100DaysOfCode](https://www.100dayso
 
 I'll be completing at least 1 hours of coding each day and tweeting my projects to [#100DaysOfCode](https://twitter.com/compose/tweet)
 
-**5/100 Days Complete**
+**6/100 Days Complete**
 
 ### 1 July 2021
 
@@ -27,3 +27,7 @@ I'll be completing at least 1 hours of coding each day and tweeting my projects 
 [Tooltip](https://github.com/oa-dev/100daysofcode/tree/main/tooltip)
 
 ### 8 July 2021
+
+[Side Navigation](https://github.com/oa-dev/100daysofcode/tree/main/side-nav)
+
+### 9 July 2021
