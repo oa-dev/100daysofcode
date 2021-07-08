@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  background-color: greenyellow;
+  list-style-type: none;
+  width: 90vw;
+  display: flex;
+}
+
+li {
+  text-align: center;
+  flex: 1;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    flex-wrap: wrap;
+  }
+
+  li {
+    flex-basis: 100%;
+    visibility: hidden;
+  }
+
+  .fa-bars {
+    visibility: visible;
+  }
+
+  .fa-bars:hover {
+    color: orange;
+    visibility: visible;
+  }
+}
