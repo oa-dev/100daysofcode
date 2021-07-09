@@ -1,4 +1,4 @@
-# CSS Postion: Absolute / Relative
+# CSS Position: Absolute / Relative
 
 1. Absolute takes things out of flow on the document.
 

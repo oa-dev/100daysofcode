@@ -32,6 +32,6 @@ I'll be completing at least 1 hours of coding each day and tweeting my projects 
 
 ### 9 July 2021
 
-[CSS Postion: Absolute / Relative](https://github.com/oa-dev/100daysofcode/tree/main/learning-css/position)
+[CSS Position: Absolute / Relative](https://github.com/oa-dev/100daysofcode/tree/main/learning-css/position)
 
 ### 10 July 2021
