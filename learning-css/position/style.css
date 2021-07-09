@@ -1,4 +1,93 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.logo {
+  color: orangered;
+  font-size: 2rem;
+  flex: 1;
+  position: absolute;
+  top: 13px;
+  left: 20px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 80%;
+  list-style-type: none;
+}
+
+.link {
+  margin: 20px 60px;
+}
+
+.link a:link {
+  text-decoration: none;
+  color: rgb(4, 154, 255);
+}
+
+.link a:hover {
+  border-top: 1px solid rgb(4, 154, 255);
+  padding-top: 5px;
+}
+
+.link a:visited {
+  color: rgb(4, 154, 255);
+}
+
+@media screen and (max-width: 700px) {
+  .nav-bar,
+  .logo,
+  .nav-links,
+  .link {
+    all: unset;
+  }
+
+  .nav-bar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    color: orangered;
+    font-size: 1.2rem;
+    flex: 1;
+    position: absolute;
+    top: 13px;
+    left: 20px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 10px;
+  }
+
+  .link {
+    flex: 1 1 100%;
+    margin: 5px;
+  }
+
+  .link a:hover {
+    border: none;
+    color: rgb(100, 4, 255);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .logo {
+    font-size: 0.8rem;
+  }
 }
